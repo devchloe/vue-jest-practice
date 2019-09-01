@@ -1,10 +1,10 @@
 <template>
   <div class="navbar-nav">
     <router-link
+      :to="navItem.path"
       v-for="(navItem, index) in navItems"
       :key="index"
       class="nav-item"
-      :to="navItem.path"
       >{{ navItem.name }}</router-link
     >
   </div>
@@ -30,6 +30,8 @@ export default {
 
 <style lang="scss" scoped>
 .navbar-nav {
+  display: flex;
+  flex-direction: column;
   padding: 30px;
   a {
     font-weight: bold;
