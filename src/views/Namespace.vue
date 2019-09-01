@@ -1,15 +1,13 @@
 <template>
-    <div>
-        This is Namespace
-    </div>
+  <div>
+    This is Namespace
+  </div>
 </template>
 
 <script>
-  export default {
-    name: 'Namespace',
-  }
+export default {
+  name: "Namespace"
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

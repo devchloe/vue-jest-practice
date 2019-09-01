@@ -1,34 +1,34 @@
-import { shallowMount} from "@vue/test-utils";
-import LeftNavbar from '@/components/LeftNavbar';
+import { shallowMount } from "@vue/test-utils";
+import LeftNavbar from "@/components/LeftNavbar";
 
-describe('LeftNavbar', function () {
+describe("LeftNavbar", function() {
   const wrapper = shallowMount(LeftNavbar, {
-    stubs: ['router-link']
+    stubs: ["router-link"]
   });
-  it('menuItems 초기값은 클러스터, 네임스페이스 이다.', () => {
-    expect(wrapper.vm.$data.menuItems[0]).toEqual({
-      name: '클러스터',
-      path: '/cluster'
+  it("navItems 초기값은 클러스터, 네임스페이스 이다.", () => {
+    expect(wrapper.vm.navItems[0]).toEqual({
+      name: "클러스터",
+      path: "/"
     });
-    expect(wrapper.vm.$data.menuItems[1]).toEqual({
-      name: '네임스페이스',
-      path: '/namespace'
-    })
+    expect(wrapper.vm.navItems[1]).toEqual({
+      name: "네임스페이스",
+      path: "/namespace"
+    });
   });
-  it('메뉴 개수만큼 nav-item을 렌더링한다.', () => {
+  it("메뉴 개수만큼 nav-item을 렌더링한다.", () => {
     wrapper.setData({
-      menuItems: [
+      navItems: [
         {
-          name: '1'
+          name: "1"
         },
         {
-          name: '2'
+          name: "2"
         },
         {
-          name: '3'
+          name: "3"
         }
       ]
     });
-    expect(wrapper.findAll('.nav-item').length).toBe(3);
+    expect(wrapper.findAll(".nav-item").length).toBe(3);
   });
 });

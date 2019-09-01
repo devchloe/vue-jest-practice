@@ -1,15 +1,13 @@
 <template>
-    <div>
-This is Cluster
-    </div>
+  <div>
+    This is Cluster
+  </div>
 </template>
 
 <script>
-  export default {
-    name: 'Cluster'
-  }
+export default {
+  name: "Cluster"
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
