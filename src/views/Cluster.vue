@@ -21,6 +21,12 @@
         <div class="list-clusters">
             클러스터 목록
             <div>
+                커스텀 textarea 컴포넌트 테시트
+                <form-textarea v-model="sample" id="textarea1" placeholder="입력해주세요." rows="4" max-rows="5"
+                               :styles="styleObject"/>
+                {{ sample }}
+            </div>
+            <div>
                 커스텀 InputText 컴포넌트 테스트
                 <form-input v-model="clusterName" @change="hello"></form-input>
             </div>
@@ -64,10 +70,13 @@
   import PageHeader from '@/components/PageHeader'
   import ButtonPlus from "@/components/ButtonPlus";
   import FormRadio from "@/components/forms/FormRadio";
-import FormInput from '@/components/forms/FormInput'
+  import FormInput from '@/components/forms/FormInput'
+  import FormTextarea from "@/components/forms/FormTextarea";
+
   export default {
     name: "Cluster",
     components: {
+      FormTextarea,
       FormRadio,
       ButtonPlus,
       PageHeader,
@@ -78,14 +87,20 @@ import FormInput from '@/components/forms/FormInput'
       isChecked: true,
       checkedVals: ['bar'],
       helmTillerType: '',
-      clusterName:''
+      clusterName: '',
+      sample: '',
+      styleObject: {
+        resize: 'none',
+        width: '500px',
+      }
     }),
     methods: {
       hello() {
         console.log(this.clusterName);
       }
     }
-  };
+  }
+  ;
 </script>
 
 <style lang="scss" scoped>
