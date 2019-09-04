@@ -1,48 +1,46 @@
 <template>
-    <label>
-        <input type="radio" :checked="shouldBeChecked" :name="name" :value="value" @change="onChange"/>
-        {{ label }}
-    </label>
+    <div class="form-radio">
+        <div :class="{'active':shouldBeChecked}" :value="value" @click="onClick">
+            {{ text }}
+        </div>
+    </div>
 </template>
 
 <script>
   export default {
     name: 'FormRadio',
     model: {
-      prop: 'modelValue',
-      event : 'change'
+      prop: 'selectedValue',
+      event: 'click'
     },
     props: {
-      name: {
+      selectedValue: {
         type: String,
         default: ""
       },
       value: String,
-      modelValue: {
-        default: ""
-      },
-      checked: Boolean,
-      label: {
+      text: {
         type: String,
         required: true,
       },
+      checked: Boolean,
     },
-    data: () => ({
-      selected: '',
-    }),
     computed: {
       shouldBeChecked() {
-        return this.modelValue == this.value
+        return this.selectedValue == this.value
       }
     },
     methods: {
-      onChange() {
-        this.$emit('changexxx', this.value);
+      onClick() {
+        this.$emit('click', this.value);
       }
     }
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    .active {
+        border: 3px solid orange;
+    }
 
 </style>
