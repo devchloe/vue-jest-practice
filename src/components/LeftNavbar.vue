@@ -22,7 +22,8 @@ export default {
       {
         name: "네임스페이스",
         path: "/namespace"
-      }
+      },
+      { name: "모달 테스트", path: "/modal" }
     ]
   })
 };
