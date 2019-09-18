@@ -1,5 +1,8 @@
 <template>
   <div>
+    <c-button-props-cond primary>등록</c-button-props-cond>
+    <c-button-props-cond radius>취소</c-button-props-cond>
+    <themed-button color="blue">삭제</themed-button>
     <modal-dialog
       type="confirmation"
       title="멤버 추가"
@@ -34,10 +37,19 @@
 
 <script>
 import ModalDialog from "@/components/modals/ModalDialog";
+import CButton from '@/components/styled/Button'
+import CButtonProps from '@/components/styled/ButtonProps'
+import CButtonPropsCond from '@/components/styled/ButtonPropsCond'
+import ThemedButton from '@/components/styled/ThemedButton'
+
 export default {
   name: "Modal",
   components: {
-    ModalDialog
+    ModalDialog,
+    CButton,
+    CButtonProps,
+    CButtonPropsCond,
+    ThemedButton
   },
   methods: {
     handleCancel() {
